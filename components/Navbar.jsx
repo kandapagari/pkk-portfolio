@@ -1,26 +1,11 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
+import { AiOutlineClose,  AiOutlineMenu } from "react-icons/ai";
 import { useRouter } from 'next/router';
+import { contactItems, navItems } from '../public/assets/data';
 
-const navItems = [
-    { name: "Home", link: "/#hero" },
-    { name: "About", link: "/#about" },
-    { name: "Skills", link: "/#skills" },
-    { name: "Blog", link: "https://kandapagari-blog.vercel.app/" },
-    { name: "Projects", link: "/#projects_dummy" },
-    { name: "Contact", link: "/#contact" },
-];
 
-const contactItems = [
-    { icon: FaLinkedinIn, link: "https://www.linkedin.com/in/kandapagari/" },
-    { icon: FaGithub, link: "https://github.com/kandapagari" },
-    { icon: AiOutlineMail, link: "mailto://785pavan@gmail.com" },
-    { icon: BsFillPersonLinesFill, link: "/#contact" }
-];
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -70,8 +55,8 @@ const Navbar = () => {
                 </Link>
                 <div>
                     <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
-                        {navItems.map((navItem) => (
-                            <Link href={`${navItem.link}`}>
+                        {navItems.map((navItem, idx) => (
+                            <Link key={idx} href={`${navItem.link}`}>
                                 <li className="ml-10 text-sm uppercase hover:border-b">
                                     {navItem.name}
                                 </li>
@@ -118,8 +103,8 @@ const Navbar = () => {
                     </div>
                     <div className="py-4 flex flex-col">
                         <ul className="uppercase">
-                            {navItems.map((navItem) => (
-                                <Link href={`${navItem.link}`}>
+                            {navItems.map((navItem, idx) => (
+                                <Link key={idx} href={`${navItem.link}`}>
                                     <a target="_blank">
                                         <li onClick={() => setNav(false)} className="py-4 text-sm">{navItem.name}</li>
                                     </a>
@@ -128,11 +113,11 @@ const Navbar = () => {
                         </ul>
                         <div className="pt-40 ">
                             <p className="uppercase tracking-widest text-[#5651e5]">
-                                Let's connect
+                                Let&apos;s connect
                             </p>
                             <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                                {contactItems.map((Item) => (
-                                    <Link href={`${Item.link}`}>
+                                {contactItems.map((Item, idx) => (
+                                    <Link key={idx} href={`${Item.link}`}>
                                         <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                                             <Item.icon />
                                         </div>

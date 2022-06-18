@@ -19,7 +19,7 @@ const Hero = () => {
                 <div>
                     <p className='uppercase text-sm tracking-widest text-gray-600'>Welcome to my portfolio</p>
                     <h1 className='py-4 text-gray-700'>
-                        Hi, I'm <span className='text-[#5651e5]'>Pavan Kumar Kandapagari</span>
+                        Hi, I&apos;m <span className='text-[#5651e5]'>Pavan Kumar Kandapagari</span>
                     </h1>
                     <h1 className='py-2 text-gray-700'>
                         A Deep Learning Engineer / Software Developer
@@ -28,8 +28,8 @@ const Hero = () => {
                         Machine Learning, Deep Learning, NLP, Computer vision along with Software development enthusiast. Computer Engineer with heart of a Mechanical Engineer.
                     </p>
                     <div className='flex items-center justify-between max-w-[300px] m-auto py-4'>
-                        {contactItems.map((Item) => (
-                            <Link href={`${Item.link}`}>
+                        {contactItems.map((Item, idx) => (
+                            <Link key={idx} href={`${Item.link}`}>
                                 <a target='_blank'>
                                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                                         <Item.icon className='m-auto text-[#5651e5]' />

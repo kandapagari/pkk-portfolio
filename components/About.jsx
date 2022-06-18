@@ -12,7 +12,7 @@ const About = () => {
                         About{" "}
                     </p>
                     <h2 className="py-4">Who I am</h2>
-                    <p className='py-2 text-gray-600'>// Not Just your average AI Developer</p>
+                    <p className='py-2 text-gray-600'>Not Just your average AI Developer</p>
                     <p className='py-2 text-gray-600'>
                         I am currently working as Deep learning engineer at{" "}
                         <a
@@ -52,7 +52,7 @@ const About = () => {
                         PyTorch for making an inhouse object detection solution as my first
                         project. Later on I along with a team worked to integerate this
                         project with a CI/CD pipeline on GitLab, which provided me with well
-                        needed experirence with a version control (git).
+                        needed experirence with a version control i.e., git.
                     </p>
                     <p className="py-2 text-gray-600 underline cursor-pointer">Check out my recent projects</p>
                 </div>

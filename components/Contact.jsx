@@ -1,18 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
 import contactImg from '../public/assets/contact.jpg';
-import { AiOutlineMail } from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from 'next/link';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
+import {contactItems} from '../public/assets/data';
 
-const contactItems = [
-    { icon: FaLinkedinIn, link: "https://www.linkedin.com/in/kandapagari/" },
-    { icon: FaGithub, link: "https://github.com/kandapagari" },
-    { icon: AiOutlineMail, link: "mailto://785pavan@gmail.com" },
-    { icon: BsFillPersonLinesFill, link: "/#contact" }
-];
 
 const Contact = () => {
     return (
@@ -32,12 +24,12 @@ const Contact = () => {
                             <div>
                                 <h2 className='py-2'>Pavan Kumar Kandapagari</h2>
                                 <p className='py-2'>Deep Learning Engineer</p>
-                                <p className='py-2'>//phone</p>
+                                <p className='py-2'>phone</p>
                             </div>
                             <p className='uppercase pt-8'>Connect me @</p>
                             <div className='flex items-center justify-between py-4'>
-                                {contactItems.map((Item) => (
-                                    <Link href={`${Item.link}`}>
+                                {contactItems.map((Item, idx) => (
+                                    <Link key={idx} href={`${Item.link}`}>
                                         <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                                             <Item.icon className='m-auto text-[#5651e5]' />
                                         </div>

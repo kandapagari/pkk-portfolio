@@ -34,8 +34,8 @@ const Skills = () => {
                 </p>
                 <h2 className="py-4">What I can do</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {skillList.map((skill) => (
-                        <Link href={`${skill.link}`}>
+                    {skillList.map((skill, idx) => (
+                        <Link key={idx} href={`${skill.link}`}>
                             <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 cursor-pointer">
                                 <div className="grid grid-cols-2 gap-4 justify-center items-center">
                                     <div className="m-auto">
