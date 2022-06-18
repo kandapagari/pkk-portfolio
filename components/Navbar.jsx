@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AiOutlineClose,  AiOutlineMenu } from "react-icons/ai";
 import { useRouter } from 'next/router';
 import { contactItems, navItems } from '../public/assets/data';
+import mainImg from '../public/assets/navLogoTransparent.png';
 
 
 
@@ -47,7 +48,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
                 <Link href='/'>
                     <Image
-                        src="/../public/assets/navLogoTransparent.png"
+                        src={mainImg}
                         alt="/"
                         width="100"
                         height="100"
