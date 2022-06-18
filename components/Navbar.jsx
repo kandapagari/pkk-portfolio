@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { AiOutlineClose,  AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useRouter } from 'next/router';
 import { contactItems, navItems } from '../public/assets/data';
 import mainImg from '../public/assets/navLogoTransparent.png';
@@ -84,7 +84,7 @@ const Navbar = () => {
                     <div>
                         <div className="flex w-full items-center justify-between">
                             <Image
-                                src="/../public/assets/navLogoTransparent.png"
+                                src={mainImg}
                                 alt="/"
                                 width="75"
                                 height="75"
