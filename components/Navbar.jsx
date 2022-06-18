@@ -1,44 +1,75 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { useRouter } from 'next/router';
 
 const navItems = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/" },
-    { name: "Skills", link: "/" },
-    { name: "Blog", link: "/" },
-    { name: "Projects", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "Home", link: "/#hero" },
+    { name: "About", link: "/#about" },
+    { name: "Skills", link: "/#skills" },
+    { name: "Blog", link: "https://kandapagari-blog.vercel.app/" },
+    { name: "Projects", link: "/#projects_dummy" },
+    { name: "Contact", link: "/#contact" },
 ];
 
 const contactItems = [
-    { icon: FaLinkedinIn, link: "/" },
-    { icon: FaGithub, link: "/" },
-    { icon: AiOutlineMail, link: "/" },
-    { icon: BsFillPersonLinesFill, link: "/" }
+    { icon: FaLinkedinIn, link: "https://www.linkedin.com/in/kandapagari/" },
+    { icon: FaGithub, link: "https://github.com/kandapagari" },
+    { icon: AiOutlineMail, link: "mailto://785pavan@gmail.com" },
+    { icon: BsFillPersonLinesFill, link: "/#contact" }
 ];
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
+    const [shadow, setShadow] = useState(false);
+    const [navBg, setNavBg] = useState('#ecf0f3')
+    const [linkColor, setLinkColor] = useState('#1f2937')
+    const router = useRouter();
+
+    useEffect(() => {
+        if (
+            router.asPath == '/projects/'
+        ) {
+            setNavBg('transparent')
+            setLinkColor('#ecf0f3')
+        } else {
+            setNavBg('#ecf0f3')
+            setLinkColor('#1f2937')
+        }
+
+    }, [router])
 
     const handelNav = () => {
         setNav(!nav);
     };
 
+    useEffect(() => {
+        const handelShadow = () => {
+            if (window.scrollY >= 90) {
+                setShadow(true)
+            } else {
+                setShadow(false)
+            }
+        }
+        window.addEventListener('scroll', handelShadow);
+    }, [])
+
     return (
-        <div className="fixed w-full h-20 shadow-xl z-[100]">
+        <div style={{ backgroundColor: `${navBg}` }} className={shadow ? "fixed w-full h-20 shadow-xl z-[100]" : "fixed w-full h-20 z-[100]"}>
             <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-                <Image
-                    src="/../public/assets/navLogoTransparent.png"
-                    alt="/"
-                    width="100"
-                    height="100"
-                />
+                <Link href='/'>
+                    <Image
+                        src="/../public/assets/navLogoTransparent.png"
+                        alt="/"
+                        width="100"
+                        height="100"
+                    />
+                </Link>
                 <div>
-                    <ul className="hidden md:flex">
+                    <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
                         {navItems.map((navItem) => (
                             <Link href={`${navItem.link}`}>
                                 <li className="ml-10 text-sm uppercase hover:border-b">
@@ -89,7 +120,9 @@ const Navbar = () => {
                         <ul className="uppercase">
                             {navItems.map((navItem) => (
                                 <Link href={`${navItem.link}`}>
-                                    <li className="py-4 text-sm">{navItem.name}</li>
+                                    <a target="_blank">
+                                        <li onClick={() => setNav(false)} className="py-4 text-sm">{navItem.name}</li>
+                                    </a>
                                 </Link>
                             ))}
                         </ul>

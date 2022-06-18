@@ -6,15 +6,15 @@ import Link from 'next/link';
 
 
 const contactItems = [
-    { icon: FaLinkedinIn, link: "/" },
-    { icon: FaGithub, link: "/" },
-    { icon: AiOutlineMail, link: "/" },
-    { icon: BsFillPersonLinesFill, link: "/" }
+    { icon: FaLinkedinIn, link: "https://www.linkedin.com/in/kandapagari/" },
+    { icon: FaGithub, link: "https://github.com/kandapagari" },
+    { icon: AiOutlineMail, link: "mailto://785pavan@gmail.com" },
+    { icon: BsFillPersonLinesFill, link: "/#contact" }
 ];
 
 const Hero = () => {
     return (
-        <div className='w-full h-screen text-center'>
+        <div id='hero' className='w-full h-screen text-center'>
             <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
                 <div>
                     <p className='uppercase text-sm tracking-widest text-gray-600'>Welcome to my portfolio</p>
@@ -30,11 +30,12 @@ const Hero = () => {
                     <div className='flex items-center justify-between max-w-[300px] m-auto py-4'>
                         {contactItems.map((Item) => (
                             <Link href={`${Item.link}`}>
-                                <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                                    <Item.icon />
-                                </div>
+                                <a target='_blank'>
+                                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                                        <Item.icon className='m-auto text-[#5651e5]' />
+                                    </div>
+                                </a>
                             </Link>
-
                         ))}
                     </div>
                 </div>
