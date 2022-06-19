@@ -3,14 +3,9 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from 'next/link';
+import {contactItems} from '../public/assets/data';
 
 
-const contactItems = [
-    { icon: FaLinkedinIn, link: "https://www.linkedin.com/in/kandapagari/" },
-    { icon: FaGithub, link: "https://github.com/kandapagari" },
-    { icon: AiOutlineMail, link: "mailto://785pavan@gmail.com" },
-    { icon: BsFillPersonLinesFill, link: "/#contact" }
-];
 
 const Hero = () => {
     return (

@@ -49,7 +49,7 @@ const Navbar = () => {
                 <Link href='/'>
                     <Image
                         src={mainImg}
-                        alt="/"
+                        alt="logo"
                         width="100"
                         height="100"
                     />

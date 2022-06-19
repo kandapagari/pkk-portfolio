@@ -3,7 +3,7 @@ import React from 'react'
 import contactImg from '../public/assets/contact.jpg';
 import Link from 'next/link';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
-import {contactItems} from '../public/assets/data';
+import { contactItems } from '../public/assets/data';
 
 
 const Contact = () => {
@@ -24,15 +24,19 @@ const Contact = () => {
                             <div>
                                 <h2 className='py-2'>Pavan Kumar Kandapagari</h2>
                                 <p className='py-2'>Deep Learning Engineer</p>
-                                <p className='py-2'>phone</p>
+                                <p className='py-2'>Munich</p>
+                                <p className='py-2'>Germany</p>
+                                <p className='py-2'>+49 1573 9467478</p>
                             </div>
-                            <p className='uppercase pt-8'>Connect me @</p>
-                            <div className='flex items-center justify-between py-4'>
+                            <p className='uppercase pt-8'>Connect: </p>
+                            <div className='flex items-center justify-between max-w-[300px] m-auto py-4'>
                                 {contactItems.map((Item, idx) => (
                                     <Link key={idx} href={`${Item.link}`}>
-                                        <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                                            <Item.icon className='m-auto text-[#5651e5]' />
-                                        </div>
+                                        <a target='_blank'>
+                                            <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                                                <Item.icon className='m-auto text-[#5651e5]' />
+                                            </div>
+                                        </a>
                                     </Link>
                                 ))}
                             </div>
