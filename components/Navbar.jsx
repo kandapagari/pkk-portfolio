@@ -106,9 +106,7 @@ const Navbar = () => {
                         <ul className="uppercase">
                             {navItems.map((navItem, idx) => (
                                 <Link key={idx} href={`${navItem.link}`}>
-                                    <a target="_blank">
-                                        <li onClick={() => setNav(false)} className="py-4 text-sm">{navItem.name}</li>
-                                    </a>
+                                    <li onClick={() => setNav(false)} className="py-4 text-sm">{navItem.name}</li>
                                 </Link>
                             ))}
                         </ul>
