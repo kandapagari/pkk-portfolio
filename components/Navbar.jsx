@@ -48,6 +48,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
                 <Link href='/'>
                     <Image
+                        className="cursor-pointer"
                         src={mainImg}
                         alt="logo"
                         width="100"
@@ -58,11 +59,18 @@ const Navbar = () => {
                     <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
                         {navItems.map((navItem, idx) => (
                             <Link key={idx} href={`${navItem.link}`}>
-                                <li className="ml-10 text-sm uppercase hover:border-b">
+                                <li className="ml-10 text-sm uppercase hover:border-b hover:text-[#5651e5]">
                                     {navItem.name}
                                 </li>
                             </Link>
                         ))}
+                        <Link href="https://kandapagari-blog.vercel.app/">
+                            <a target='_blank'>
+                                <li className="ml-10 text-sm uppercase hover:border-b hover:text-[#5651e5]">
+                                    Blog
+                                </li>
+                            </a>
+                        </Link>
                     </ul>
                     <div onClick={handelNav} className="md:hidden ">
                         <AiOutlineMenu size={25} />
@@ -109,6 +117,13 @@ const Navbar = () => {
                                     <li onClick={() => setNav(false)} className="py-4 text-sm">{navItem.name}</li>
                                 </Link>
                             ))}
+                            <Link href="https://kandapagari-blog.vercel.app/">
+                                <a target='_blank'>
+                                    <li className="py-4 text-sm">
+                                        Blog
+                                    </li>
+                                </a>
+                            </Link>
                         </ul>
                         <div className="pt-40 ">
                             <p className="uppercase tracking-widest text-[#5651e5]">

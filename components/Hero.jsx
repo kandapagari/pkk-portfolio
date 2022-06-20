@@ -20,7 +20,7 @@ const Hero = () => {
                         A Deep Learning Engineer / Software Developer
                     </h1>
                     <p className='py-1 text-gray-600 max-w-[70%] m-auto'>
-                        Machine Learning, Deep Learning, NLP, Computer vision along with Software development enthusiast. Computer Engineer with heart of a Mechanical Engineer.
+                        A Deep Learning engineer with specialization in Computer vision software development. An aspiring Full stack Deep Learning Engineer.
                     </p>
                     <div className='flex items-center justify-between max-w-[300px] m-auto py-4'>
                         {contactItems.map((Item, idx) => (

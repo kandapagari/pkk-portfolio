@@ -1,4 +1,5 @@
 import React from 'react';
+import {GiClick} from 'react-icons/gi';
 
 const ProjectsDummy = () => {
 
@@ -9,14 +10,13 @@ const ProjectsDummy = () => {
                     {"  "}
                     {" "}
                 </p>
-                <p className="uppercase text-xl tracking-widest text-[#5651e5]">
-                    <a className='underline text-blue-500 py-8'
+                <p className="uppercase text-xl tracking-widest text-[#5651e5] hover:scale-105 ease-in duration-100 cursor-pointer">
+                    <a className='py-8'
                         href="/files/resume.pdf"
                         alt="alt text"
                         target="_blank"
                         rel="noopener noreferrer">
-                        {" "}
-                        Resume{""}
+                        Resume <GiClick />
                     </a>
                 </p>
             </div>
