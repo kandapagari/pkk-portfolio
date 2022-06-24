@@ -56,9 +56,12 @@ const About = () => {
                         needed experirence with a version control i.e., git.
                     </p>
                     <Link href='https://github.com/kandapagari?tab=repositories'>
-                        <p className="py-2 text-gray-600 underline cursor-pointer">
-                            Check out my recent projects
-                        </p>
+                        <a target='_blank'>
+                            <p className="py-2 text-gray-600 underline cursor-pointer">
+                                Check out my recent projects
+                            </p>
+                        </a>
+
                     </Link>
 
                 </div>
