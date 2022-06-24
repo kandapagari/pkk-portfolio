@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import aboutImg from '../public/assets/alt-about.jpg';
+import Link from "next/link";
 
 const About = () => {
     return (
@@ -54,7 +55,12 @@ const About = () => {
                         project with a CI/CD pipeline on GitLab, which provided me with well
                         needed experirence with a version control i.e., git.
                     </p>
-                    <p className="py-2 text-gray-600 underline cursor-pointer">Check out my recent projects</p>
+                    <Link href='https://github.com/kandapagari?tab=repositories'>
+                        <p className="py-2 text-gray-600 underline cursor-pointer">
+                            Check out my recent projects
+                        </p>
+                    </Link>
+
                 </div>
                 <div className='w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
                     <Image className="rounded-xl" src={aboutImg} alt="/" />
